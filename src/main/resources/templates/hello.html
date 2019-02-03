@@ -2,12 +2,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
-        <title>Hello World!</title>
+        <title>Captain Crypto's Castle</title>
+		
+		<link th:href="@{/style.css}" rel="stylesheet" />
+		
+   		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+		<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+   
     </head>
     <body>
-        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
+    <br><br>
+    	<div class="container-fluid well span10">
+			<div class="row-fluid">
+        		<div class="span4" >
+		    		<img class="img-thumbnail" src="sp-studio-red.jpg">
+        		</div>
+        
+        		<div class="span6">
+            		<h3>Hello Captain Crypto</h3>
+            		<h6>Alias: Karl der Große</h6>
+            		<h6>Email: crypto@god.com</h6>
+            		<h6>Age: 11 Years</h6>
+            		<h6>Favorite Animal: Monkey</h6>
+            		<h6>Likes: Cryptography, Hacking</h6>
+            		
+        			<h4><u>Stolen Identity Keys</u></h4>
+        			<h6>placeholder</h6>
+        		</div>
+        
+        		<div class="span2">
+            		<form th:action="@{/logout}" method="post">
+            			<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign Out</button>
+        			</form>
+
+        		
+            	</div>
+        	</div>
+        </div>
+        		
+
+          
+          <!--      
+        <div class="container h-80">
+      
+			<div class="row align-items-center h-100">
+    			<div class="col-4 mx-auto">
+        			<div class="text-center">
+        				<h2 th:inline="text" class="text-white">Hello [[${#httpServletRequest.remoteUser}]]!</h2>
+            			
+            			<img id="profile-img" class="img-thumbnail" src="sp-studio-red.jpg" />
+            			 
+            			<p id="profile-name" class="profile-name-card"></p>
+            			
+            			 <form th:action="@{/logout}" method="post">
+            				<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign Out</button>
+        				</form>
+        			</div>
+    			</div>
+			</div>
+		</div>
+		-->
     </body>
 </html>

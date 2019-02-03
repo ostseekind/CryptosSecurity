@@ -31,8 +31,20 @@ public class CryptosApplController {
 		 //return "redirect:/secure
 	 }
 	 
-	 @GetMapping("/resetPassword")
-	 public String resetPassword() {
+	
+	 @RequestMapping( value = "/resetPassword", method = {RequestMethod.GET, RequestMethod.POST})
+	 	public String resetPassword(HttpServletRequest req, RedirectAttributes attr, Model model) {
+		 String animal = req.getParameter("animal");
+		 String IBAN = req.getParameter("IBAN");
+		 String user = req.getParameter("username");
+		 
+		 
+		 if(user!=null && animal !=null && IBAN !=null) {
+			 if(user.equals("Crypto") && animal.equals("123456") && IBAN.replaceAll("\\s+","").equals("DE91500105174425265142")) {
+				 model.addAttribute("password", "r4ht4gkfdgkwdj!..ferf");
+			}
+		 }
+		 
 		 return "resetPassword";
 	 }
 	 
