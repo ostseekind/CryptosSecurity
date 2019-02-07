@@ -23,8 +23,7 @@ pipeline {
      
         stage("Build") {
           steps {
-            sh 'docker run --rm -v ${PWD}:/work maven mvn package'
-			sh 'docker run --rm -v ${PWD}:/work juiceshop npm install'
+           sh 'docker run --rm -v ${PWD}:/usr/src/mymaven -w /usr/src/mymaven maven mvn package'
           }
         }
              
