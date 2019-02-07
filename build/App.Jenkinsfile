@@ -23,8 +23,9 @@ pipeline {
      
         stage("Build") {
           steps {
-           sh 'docker run --rm -v ${PWD}:/usr/src/mymaven -w /usr/src/mymaven maven mvn package'
-          }
+				sh 'docker run --dns ${IPADDRESS} --rm  -v ${PWD}/:/work -e SERVER=http://sonarqube.service.lidop.local:8084/sonarqube -e PROJECT_KEY=  registry.service.lidop.local:5000/lidop/sonarscanner:latest'
+
+		   }
         }
              
     	stage("Dependency Check") {
