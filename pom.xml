@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>demo</groupId>
-	<artifactId>HelloSecurityTutorial</artifactId>
+	<artifactId>CryptosCastle</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CryptosSecurity</name>
 	<description>Captain Cryptos Application</description>
