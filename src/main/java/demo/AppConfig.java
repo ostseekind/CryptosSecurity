@@ -14,27 +14,27 @@ public class AppConfig {
 	Environment env;
 	
 	@Bean
-	public String Password() {
+	public String getPassword() {
 		return env.getProperty("app.password");
 	}
 	
 	@Bean
-	public String Username() {
+	public String getUsername() {
 		return env.getProperty("app.username");
 	}
 	
 	@Bean
-	public String Question1() {
+	public String getQuestion1() {
 		return env.getProperty("app.question1");
 	}
 	
 	@Bean
-	public String Question2() {
+	public String getQuestion2() {
 		return env.getProperty("app.question2");
 	}
 	
 	@Bean
-	public String Flag() {
+	public String getFlag() {
 		return env.getProperty("app.flag");
 	}
 }

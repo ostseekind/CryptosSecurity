@@ -38,8 +38,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     	
         UserDetails user =
              User.withDefaultPasswordEncoder()
-                .username((String) ctx.getBean("Username"))
-                .password((String) ctx.getBean("Password"))
+                .username((String) ctx.getBean("getUsername"))
+                .password((String) ctx.getBean("getPassword"))
                 .roles("USER")
                 .build();
 

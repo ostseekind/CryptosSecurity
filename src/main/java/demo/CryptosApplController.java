@@ -23,7 +23,7 @@ public class CryptosApplController {
 	 
 	 @RequestMapping( value = "/hello", method = {RequestMethod.GET, RequestMethod.POST})
 	 	public String hello(HttpServletRequest req, RedirectAttributes attr, Model model) {
-		 model.addAttribute("flag", (String) ctx.getBean("Flag"));
+		 model.addAttribute("flag", (String) ctx.getBean("getFlag"));
 		 return "hello";
 	 }
 	 
@@ -41,9 +41,9 @@ public class CryptosApplController {
 		 String user = req.getParameter("username");
 		 	 
 		 if(user!=null && animal !=null && IBAN !=null) {
-			 if(user.equals((String) ctx.getBean("Username")) && animal.equals((String) ctx.getBean("Question2")) && IBAN.replaceAll("\\s+","").equals((String) ctx.getBean("Question1"))) {
+			 if(user.equals((String) ctx.getBean("getUsername")) && animal.equals((String) ctx.getBean("getQuestion2")) && IBAN.replaceAll("\\s+","").equals((String) ctx.getBean("getQuestion1"))) {
 				
-				 model.addAttribute("password", (String) ctx.getBean("Password"));
+				 model.addAttribute("password", (String) ctx.getBean("getPassword"));
 				 
 			}
 		 }
