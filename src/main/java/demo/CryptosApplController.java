@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class CryptosApplController {
+	 private AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 	
 	 @GetMapping("/")
 	    public String index() {
@@ -20,8 +21,9 @@ public class CryptosApplController {
 	    }
 	 
 	 
-	 @GetMapping("/hello")
-	 public String hello() {
+	 @RequestMapping( value = "/hello", method = {RequestMethod.GET, RequestMethod.POST})
+	 	public String hello(HttpServletRequest req, RedirectAttributes attr, Model model) {
+		 model.addAttribute("flag", (String) ctx.getBean("Flag"));
 		 return "hello";
 	 }
 	 
@@ -37,14 +39,11 @@ public class CryptosApplController {
 		 String animal = req.getParameter("animal");
 		 String IBAN = req.getParameter("IBAN");
 		 String user = req.getParameter("username");
-		 
-		 
+		 	 
 		 if(user!=null && animal !=null && IBAN !=null) {
-			 if(user.equals("Crypto") && animal.equals("123456") && IBAN.replaceAll("\\s+","").equals("DE91500105174425265142")) {
-				 
-				 AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
-				 String a = (String) ctx.getBean("Answer");
-				 model.addAttribute("password", a);
+			 if(user.equals((String) ctx.getBean("Username")) && animal.equals((String) ctx.getBean("Question2")) && IBAN.replaceAll("\\s+","").equals((String) ctx.getBean("Question1"))) {
+				
+				 model.addAttribute("password", (String) ctx.getBean("Password"));
 				 
 			}
 		 }

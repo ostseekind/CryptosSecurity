@@ -1,5 +1,6 @@
 package demo;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -13,6 +14,9 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+	 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -31,10 +35,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     @Override
     public UserDetailsService userDetailsService() {
+    	
         UserDetails user =
              User.withDefaultPasswordEncoder()
-                .username("Crypto")
-                .password("r4ht4gkfdgkwdj!..ferf")
+                .username((String) ctx.getBean("Username"))
+                .password((String) ctx.getBean("Password"))
                 .roles("USER")
                 .build();
 
