@@ -3,10 +3,10 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
        <head>
         <title>Captain Crypto's Castle</title>
-		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<link th:href="@{/bootstrap-4.0.0.min.css}" rel="stylesheet" id="bootstrap-css">
 		<link th:href="@{/style.css}" rel="stylesheet" />
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script th:src="@{/bootstrap-4.0.0.min.js}"></script>
+		<script th:src="@{/jquery-3.2.1.min.js}"></script>
  </head>
     <body>
     
