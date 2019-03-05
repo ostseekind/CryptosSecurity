@@ -9,3 +9,7 @@ Sincerely,
 Captain Crypto"
 
 <Link to Portal>
+
+Docker Image
+docker build -t cryptoscastle .
+docker run -p 8080:8080 cryptoscastle
