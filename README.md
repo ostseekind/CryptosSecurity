@@ -1,5 +1,5 @@
 # CryptosSecurity
-CTF challenge - hack Cryptos Application
+CTF challenge - hack Captain Cryptos Castle
 
 # CTF Opening
 "Dear Sir or Madam,
